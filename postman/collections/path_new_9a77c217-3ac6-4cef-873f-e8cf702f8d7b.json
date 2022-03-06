@@ -7,7 +7,101 @@
     "item": [
         {
             "name": "Sample endpoint: Returns details about a particulars",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "164c1d14-5325-4de5-9ba7-4cea7fc19149",
+                        "exec": [
+                            "pm.test('Validate Response body', function () {",
+                            "pm.response.to.have.status(200);",
+                            "",
+                            "pm.response.to.have.header(\"Content-Type\")",
+                            "pm.expect(pm.response.headers.get('Content-Type')).to.have.string('application/json')",
+                            "",
+                            "const responseJson = pm.response.json();",
+                            "pm.expect(responseJson).to.be.an('object')",
+                            "pm.expect(responseJson.model_id).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.meta).to.be.an('object')",
+                            "pm.expect(responseJson.meta).to.include.all.keys(\"model\",\"action\")",
+                            "pm.expect(responseJson.meta.model).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.meta.action).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.data).to.be.an('object')",
+                            "pm.expect(responseJson.data).to.include.all.keys(\"apiVersion\",\"id\",\"name\",\"description\",\"visibility\",\"entities\",\"createdBy\",\"updatedBy\",\"createdAt\",\"updatedAt\")",
+                            "pm.expect(responseJson.data.apiVersion).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.data.id).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.data.name).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.data.description).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.data.visibility).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.data.entities).to.be.an('object')",
+                            "if(_.get(responseJson.data.entities.schemas)) {",
+                            "  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
+                            "  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
+                            "  for (var i = 0; i < responseJson.data.entities.schemas.length; i++) { ",
+                            "   pm.expect(responseJson.data.entities.schemas[i]).to.be.an('object') ",
+                            "}}",
+                            "",
+                            "if(_.get(responseJson.data.entities.documentations)) {",
+                            "  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
+                            "  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
+                            "  for (var i = 0; i < responseJson.data.entities.documentations.length; i++) { ",
+                            "   pm.expect(responseJson.data.entities.documentations[i]).to.be.an('object') ",
+                            "}}",
+                            "",
+                            "if(_.get(responseJson.data.entities.integrationtests)) {",
+                            "  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
+                            "  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
+                            "  for (var i = 0; i < responseJson.data.entities.integrationtests.length; i++) { ",
+                            "   pm.expect(responseJson.data.entities.integrationtests[i]).to.be.an('object') ",
+                            "}}",
+                            "",
+                            "if(_.get(responseJson.data.entities.tests)) {",
+                            "  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
+                            "  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
+                            "  for (var i = 0; i < responseJson.data.entities.tests.length; i++) { ",
+                            "   pm.expect(responseJson.data.entities.tests[i]).to.be.an('object') ",
+                            "}}",
+                            "",
+                            "if(_.get(responseJson.data.entities.testsuites)) {",
+                            "  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
+                            "  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
+                            "  for (var i = 0; i < responseJson.data.entities.testsuites.length; i++) { ",
+                            "   pm.expect(responseJson.data.entities.testsuites[i]).to.be.an('object') ",
+                            "}}",
+                            "",
+                            "if(_.get(responseJson.data.entities.contracttests)) {",
+                            "  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
+                            "  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
+                            "  for (var i = 0; i < responseJson.data.entities.contracttests.length; i++) { ",
+                            "   pm.expect(responseJson.data.entities.contracttests[i]).to.be.an('object') ",
+                            "}}",
+                            "",
+                            "pm.expect(responseJson.data.createdBy).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.data.updatedBy).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.data.createdAt).to.be.an('string')",
+                            "",
+                            "pm.expect(responseJson.data.updatedAt).to.be.an('string')",
+                            "",
+                            "})"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
             "id": "6c5762cc-2ea1-48c5-8ea1-30dfef14ec0f",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
             "request": {
                 "method": "GET",
                 "header": [],
@@ -23,18 +117,29 @@
                     ],
                     "query": [
                         {
-                            "description": "(Required) ID of the user",
                             "key": "id",
-                            "value": "31061769"
+                            "value": "31061769",
+                            "description": "(Required) ID of the user"
                         }
                     ],
                     "variable": [
+                        {
+                            "key": "age",
+                            "value": "81505197",
+                            "description": "(Required) user&#39;s age",
+                            "id": "b82ca4b1-3d0e-4972-91bd-0e1126ba2352",
+                            "type": "string"
+                        },
                         {
                             "id": "b82ca4b1-3d0e-4972-91bd-0e1126ba2352",
                             "key": "age",
                             "value": "81505197",
                             "type": "string",
                             "description": "(Required) user&#39;s age"
+                        },
+                        {
+                            "value": null,
+                            "key": "info"
                         }
                     ]
                 }
