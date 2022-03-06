@@ -96,6 +96,18 @@
                         ],
                         "type": "text/javascript"
                     }
+                },
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "d1846645-32c9-45b8-b60d-57891fb48884",
+                        "exec": [
+                            "pm.test('Validate Request body', function () {",
+                            " console.log('hi')",
+                            "})"
+                        ],
+                        "type": "text/javascript"
+                    }
                 }
             ],
             "id": "6c5762cc-2ea1-48c5-8ea1-30dfef14ec0f",
