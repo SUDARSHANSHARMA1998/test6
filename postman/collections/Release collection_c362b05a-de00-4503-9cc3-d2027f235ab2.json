@@ -146,7 +146,58 @@
                     ]
                 }
             },
-            "response": []
+            "response": [
+                {
+                    "id": "52ab7145-70ba-4143-8f69-5d938b5c853c",
+                    "name": "Example 1",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "X-access-token",
+                                "value": "4d84120547574ea82ac2cab51297656e50c8a7a039d4c4293a84bb0b3ee5e20d783f4a04a4bc94ce610ec1e733e6cbfc824017013e7c0fc6114d70bf8b4c4ca3",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://api-dev-platform.postman-beta.tech/apis/:apiId/versions/:versionId/releases/:id",
+                            "protocol": "https",
+                            "host": [
+                                "api-dev-platform",
+                                "postman-beta",
+                                "tech"
+                            ],
+                            "path": [
+                                "apis",
+                                ":apiId",
+                                "versions",
+                                ":versionId",
+                                "releases",
+                                ":id"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "apiId",
+                                    "value": "cb33e255-f2c2-4efe-8700-b5a9eaca1033"
+                                },
+                                {
+                                    "key": "versionId",
+                                    "value": "e89524e0-02a2-407f-95e1-93ec62cce183"
+                                },
+                                {
+                                    "key": "id",
+                                    "value": "55968ff0-75ca-4b6d-899c-ec6ca3b5fbbb"
+                                }
+                            ]
+                        }
+                    },
+                    "_postman_previewlanguage": null,
+                    "header": null,
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": null
+                }
+            ]
         }
     ]
 }
