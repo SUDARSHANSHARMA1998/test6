@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "58195695-6517-42e8-83b7-ee471ac2d7b8",
+		"name": "path_new",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sample endpoint: Returns details about a particulars",
+			"id": "e1a20d72-7096-4561-b349-8a01ff8c155f",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/user/:info/:age?id=31061769",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						":info",
+						":age"
+					],
+					"query": [
+						{
+							"description": "(Required) ID of the user",
+							"key": "id",
+							"value": "31061769"
+						}
+					],
+					"variable": [
+						{
+							"id": "b82ca4b1-3d0e-4972-91bd-0e1126ba2352",
+							"key": "age",
+							"value": "81505197",
+							"type": "string",
+							"description": "(Required) user&#39;s age"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d0c9f276-4130-4fb2-b53a-c7fa8af825db",
+					"name": "Sample response: Details about a user by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/:info/:age?id=19256268",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								":info",
+								":age"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "19256268"
+								}
+							],
+							"variable": [
+								{
+									"key": "info"
+								},
+								{
+									"key": "age"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"description": {
+								"content": "A link to the next page of responses",
+								"type": "text/plain"
+							},
+							"key": "x-next",
+							"value": "voluptate consequat in cupidatat"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n \"id\": -52411379,\n \"name\": \"ut cillum ullamco\",\n \"tag\": \"commodo incididunt\"\n}"
+				},
+				{
+					"id": "e37a1e58-d9a6-4702-8316-1e74b3f43e40",
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/:info/:age?id=19256268",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								":info",
+								":age"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "19256268"
+								}
+							],
+							"variable": [
+								{
+									"key": "info"
+								},
+								{
+									"key": "age"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n \"code\": 35749388,\n \"message\": \"qui voluptate occaecat\"\n}"
+				}
+			],
+			"variable": [
+				{
+					"id": "b82ca4b1-3d0e-4972-91bd-0e1126ba2352",
+					"key": "age",
+					"value": "81505197",
+					"type": "string",
+					"description": "(Required) user&#39;s age"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
