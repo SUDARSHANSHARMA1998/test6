@@ -1,152 +1,153 @@
 {
-    "info": {
-        "_postman_id": "3af6dd21-d3a8-4388-9a4a-a7361d4e9c64",
-        "name": "Release collection",
-        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-    },
-    "item": [
-        {
-            "name": "Get release",
-            "event": [
-                {
-                    "listen": "test",
-                    "script": {
-                        "id": "5573485e-f742-4815-b509-52614f952277",
-                        "exec": [
-                            "pm.test('Validate Response body', function () {",
-                            "pm.response.to.have.status(200);",
-                            "",
-                            "pm.response.to.have.header(\"Content-Type\")",
-                            "pm.expect(pm.response.headers.get('Content-Type')).to.have.string('application/json')",
-                            "",
-                            "const responseJson = pm.response.json();",
-                            "pm.expect(responseJson).to.be.an('object')",
-                            "pm.expect(responseJson.model_id).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.meta).to.be.an('object')",
-                            "pm.expect(responseJson.meta).to.include.all.keys(\"model\",\"action\")",
-                            "pm.expect(responseJson.meta.model).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.meta.action).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data).to.be.an('object')",
-                            "pm.expect(responseJson.data).to.include.all.keys(\"apiVersion\",\"id\",\"name\",\"description\",\"visibility\",\"entities\",\"createdBy\",\"updatedBy\",\"createdAt\",\"updatedAt\")",
-                            "pm.expect(responseJson.data.apiVersion).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.id).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.name).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.description).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.visibility).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.entities).to.be.an('object')",
-                            "if(_.get(responseJson.data.entities.schemas)) {",
-                            "  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.schemas.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.schemas[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.documentations)) {",
-                            "  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.documentations.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.documentations[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.integrationtests)) {",
-                            "  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.integrationtests.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.integrationtests[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.tests)) {",
-                            "  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.tests.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.tests[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.testsuites)) {",
-                            "  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.testsuites.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.testsuites[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.contracttests)) {",
-                            "  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.contracttests.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.contracttests[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "pm.expect(responseJson.data.createdBy).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.updatedBy).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.createdAt).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.updatedAt).to.be.an('string')",
-                            "",
-                            "})"
-                        ],
-                        "type": "text/javascript"
-                    }
-                }
-            ],
-            "id": "061bc724-ea06-49b3-a1fe-e7e4ffa99b8d",
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "request": {
-                "auth": {
-                    "type": "noauth"
-                },
-                "method": "GET",
-                "header": [
-                    {
-                        "key": "X-access-token",
-                        "value": "4d84120547574ea82ac2cab51297656e50c8a7a039d4c4293a84bb0b3ee5e20d783f4a04a4bc94ce610ec1e733e6cbfc824017013e7c0fc6114d70bf8b4c4ca3",
-                        "type": "text"
-                    }
-                ],
-                "url": {
-                    "raw": "https://api-dev-platform.postman-beta.tech/apis/:apiId/versions/:versionId/releases/:id",
-                    "protocol": "https",
-                    "host": [
-                        "api-dev-platform",
-                        "postman-beta",
-                        "tech"
-                    ],
-                    "path": [
-                        "apis",
-                        ":apiId",
-                        "versions",
-                        ":versionId",
-                        "releases",
-                        ":id"
-                    ],
-                    "variable": [
-                        {
-                            "key": "apiId",
-                            "value": "cb33e255-f2c2-4efe-8700-b5a9eaca1033"
-                        },
-                        {
-                            "key": "versionId",
-                            "value": "e89524e0-02a2-407f-95e1-93ec62cce183"
-                        },
-                        {
-                            "key": "id",
-                            "value": "55968ff0-75ca-4b6d-899c-ec6ca3b5fbbb"
-                        }
-                    ]
-                }
-            },
-            "response": []
-        }
-    ]
+	"info": {
+		"_postman_id": "feca1412-ca1e-4404-9dea-055d9360d57f",
+		"name": "Release collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "812948-feca1412-ca1e-4404-9dea-055d9360d57f"
+	},
+	"item": [
+		{
+			"name": "Get release",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5a0447c-67a5-41f0-939c-961314c9f629",
+						"exec": [
+							"pm.test('Validate Response body', function () {",
+							"pm.response.to.have.status(200);",
+							"",
+							"pm.response.to.have.header(\"Content-Type\")",
+							"pm.expect(pm.response.headers.get('Content-Type')).to.have.string('application/json')",
+							"",
+							"const responseJson = pm.response.json();",
+							"pm.expect(responseJson).to.be.an('object')",
+							"pm.expect(responseJson.model_id).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.meta).to.be.an('object')",
+							"pm.expect(responseJson.meta).to.include.all.keys(\"model\",\"action\")",
+							"pm.expect(responseJson.meta.model).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.meta.action).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data).to.be.an('object')",
+							"pm.expect(responseJson.data).to.include.all.keys(\"apiVersion\",\"id\",\"name\",\"description\",\"visibility\",\"entities\",\"createdBy\",\"updatedBy\",\"createdAt\",\"updatedAt\")",
+							"pm.expect(responseJson.data.apiVersion).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.id).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.name).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.description).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.visibility).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.entities).to.be.an('object')",
+							"if(_.get(responseJson.data.entities.schemas)) {",
+							"  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.schemas.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.schemas[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.documentations)) {",
+							"  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.documentations.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.documentations[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.integrationtests)) {",
+							"  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.integrationtests.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.integrationtests[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.tests)) {",
+							"  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.tests.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.tests[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.testsuites)) {",
+							"  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.testsuites.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.testsuites[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.contracttests)) {",
+							"  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.contracttests.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.contracttests[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"pm.expect(responseJson.data.createdBy).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.updatedBy).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.createdAt).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.updatedAt).to.be.an('string')",
+							"",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "117d0567-a0e8-4cd3-92ee-e1f653071e31",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-access-token",
+						"value": "4d84120547574ea82ac2cab51297656e50c8a7a039d4c4293a84bb0b3ee5e20d783f4a04a4bc94ce610ec1e733e6cbfc824017013e7c0fc6114d70bf8b4c4ca3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-dev-platform.postman-beta.tech/apis/:apiId/versions/:versionId/releases/:id",
+					"protocol": "https",
+					"host": [
+						"api-dev-platform",
+						"postman-beta",
+						"tech"
+					],
+					"path": [
+						"apis",
+						":apiId",
+						"versions",
+						":versionId",
+						"releases",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "apiId",
+							"value": "cb33e255-f2c2-4efe-8700-b5a9eaca1033"
+						},
+						{
+							"key": "versionId",
+							"value": "e89524e0-02a2-407f-95e1-93ec62cce183"
+						},
+						{
+							"key": "id",
+							"value": "55968ff0-75ca-4b6d-899c-ec6ca3b5fbbb"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }

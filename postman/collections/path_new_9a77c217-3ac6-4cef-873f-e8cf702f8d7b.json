@@ -1,278 +1,277 @@
 {
-    "info": {
-        "_postman_id": "51e8b5e4-15db-4aa4-af17-d30ba39b6717",
-        "name": "path_new",
-        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-    },
-    "item": [
-        {
-            "name": "Sample endpoint: Returns details about a particulars",
-            "event": [
-                {
-                    "listen": "test",
-                    "script": {
-                        "id": "164c1d14-5325-4de5-9ba7-4cea7fc19149",
-                        "exec": [
-                            "pm.test('Validate Response body', function () {",
-                            "pm.response.to.have.status(200);",
-                            "",
-                            "pm.response.to.have.header(\"Content-Type\")",
-                            "pm.expect(pm.response.headers.get('Content-Type')).to.have.string('application/json')",
-                            "",
-                            "const responseJson = pm.response.json();",
-                            "pm.expect(responseJson).to.be.an('object')",
-                            "pm.expect(responseJson.model_id).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.meta).to.be.an('object')",
-                            "pm.expect(responseJson.meta).to.include.all.keys(\"model\",\"action\")",
-                            "pm.expect(responseJson.meta.model).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.meta.action).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data).to.be.an('object')",
-                            "pm.expect(responseJson.data).to.include.all.keys(\"apiVersion\",\"id\",\"name\",\"description\",\"visibility\",\"entities\",\"createdBy\",\"updatedBy\",\"createdAt\",\"updatedAt\")",
-                            "pm.expect(responseJson.data.apiVersion).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.id).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.name).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.description).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.visibility).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.entities).to.be.an('object')",
-                            "if(_.get(responseJson.data.entities.schemas)) {",
-                            "  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.schemas.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.schemas[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.documentations)) {",
-                            "  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.documentations.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.documentations[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.integrationtests)) {",
-                            "  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.integrationtests.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.integrationtests[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.tests)) {",
-                            "  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.tests.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.tests[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.testsuites)) {",
-                            "  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.testsuites.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.testsuites[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "if(_.get(responseJson.data.entities.contracttests)) {",
-                            "  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
-                            "  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
-                            "  for (var i = 0; i < responseJson.data.entities.contracttests.length; i++) { ",
-                            "   pm.expect(responseJson.data.entities.contracttests[i]).to.be.an('object') ",
-                            "}}",
-                            "",
-                            "pm.expect(responseJson.data.createdBy).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.updatedBy).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.createdAt).to.be.an('string')",
-                            "",
-                            "pm.expect(responseJson.data.updatedAt).to.be.an('string')",
-                            "",
-                            "})"
-                        ],
-                        "type": "text/javascript"
-                    }
-                },
-                {
-                    "listen": "prerequest",
-                    "script": {
-                        "id": "d1846645-32c9-45b8-b60d-57891fb48884",
-                        "exec": [
-                            "pm.test('Validate Request body', function () {",
-                            " console.log('hi')",
-                            "})"
-                        ],
-                        "type": "text/javascript"
-                    }
-                }
-            ],
-            "id": "6c5762cc-2ea1-48c5-8ea1-30dfef14ec0f",
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                    "raw": "{{baseUrl}}/user/:info/:age?id=31061769",
-                    "host": [
-                        "{{baseUrl}}"
-                    ],
-                    "path": [
-                        "user",
-                        ":info",
-                        ":age"
-                    ],
-                    "query": [
-                        {
-                            "key": "id",
-                            "value": "31061769",
-                            "description": "(Required) ID of the user"
-                        }
-                    ],
-                    "variable": [
-                        {
-                            "key": "age",
-                            "value": "81505197",
-                            "description": "(Required) user&#39;s age",
-                            "id": "b82ca4b1-3d0e-4972-91bd-0e1126ba2352",
-                            "type": "string"
-                        },
-                        {
-                            "id": "b82ca4b1-3d0e-4972-91bd-0e1126ba2352",
-                            "key": "age",
-                            "value": "81505197",
-                            "type": "string",
-                            "description": "(Required) user&#39;s age"
-                        },
-                        {
-                            "value": null,
-                            "key": "info"
-                        }
-                    ]
-                }
-            },
-            "response": [
-                {
-                    "id": "01ec2790-2cd5-4ebf-8b81-70ed69ffa9ec",
-                    "name": "Sample response: Details about a user by ID",
-                    "originalRequest": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/user/:info/:age?id=19256268",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "user",
-                                ":info",
-                                ":age"
-                            ],
-                            "query": [
-                                {
-                                    "key": "id",
-                                    "value": "19256268"
-                                }
-                            ],
-                            "variable": [
-                                {
-                                    "key": "info"
-                                },
-                                {
-                                    "key": "age"
-                                }
-                            ]
-                        }
-                    },
-                    "status": "OK",
-                    "code": 200,
-                    "_postman_previewlanguage": "Text",
-                    "header": [
-                        {
-                            "description": {
-                                "content": "A link to the next page of responses",
-                                "type": "text/plain"
-                            },
-                            "key": "x-next",
-                            "value": "voluptate consequat in cupidatat"
-                        },
-                        {
-                            "key": "Content-Type",
-                            "value": "application/json"
-                        }
-                    ],
-                    "cookie": [],
-                    "responseTime": null,
-                    "body": "{\n \"id\": -52411379,\n \"name\": \"ut cillum ullamco\",\n \"tag\": \"commodo incididunt\"\n}"
-                },
-                {
-                    "id": "7e177493-5a21-4004-adb0-e3f8c2e2367c",
-                    "name": "Unexpected error",
-                    "originalRequest": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/user/:info/:age?id=19256268",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "user",
-                                ":info",
-                                ":age"
-                            ],
-                            "query": [
-                                {
-                                    "key": "id",
-                                    "value": "19256268"
-                                }
-                            ],
-                            "variable": [
-                                {
-                                    "key": "info"
-                                },
-                                {
-                                    "key": "age"
-                                }
-                            ]
-                        }
-                    },
-                    "status": "Internal Server Error",
-                    "code": 500,
-                    "_postman_previewlanguage": "Text",
-                    "header": [
-                        {
-                            "key": "Content-Type",
-                            "value": "application/json"
-                        }
-                    ],
-                    "cookie": [],
-                    "responseTime": null,
-                    "body": "{\n \"code\": 35749388,\n \"message\": \"qui voluptate occaecat\"\n}"
-                }
-            ],
-            "variable": [
-                {
-                    "id": "b82ca4b1-3d0e-4972-91bd-0e1126ba2352",
-                    "key": "age",
-                    "value": "81505197",
-                    "type": "string",
-                    "description": "(Required) user&#39;s age"
-                }
-            ]
-        }
-    ],
-    "variable": [
-        {
-            "id": "baseUrl",
-            "key": "baseUrl",
-            "value": "http://localhost:3000",
-            "type": "string"
-        }
-    ]
+	"info": {
+		"_postman_id": "bd5aef59-eafa-4c4b-93e4-ac02f620bbd5",
+		"name": "path_new",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "812948-bd5aef59-eafa-4c4b-93e4-ac02f620bbd5"
+	},
+	"item": [
+		{
+			"name": "Sample endpoint: Returns details about a particulars",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9fd48fd5-b2d8-45af-a407-fc1913f0c056",
+						"exec": [
+							"pm.test('Validate Response body', function () {",
+							"pm.response.to.have.status(200);",
+							"",
+							"pm.response.to.have.header(\"Content-Type\")",
+							"pm.expect(pm.response.headers.get('Content-Type')).to.have.string('application/json')",
+							"",
+							"const responseJson = pm.response.json();",
+							"pm.expect(responseJson).to.be.an('object')",
+							"pm.expect(responseJson.model_id).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.meta).to.be.an('object')",
+							"pm.expect(responseJson.meta).to.include.all.keys(\"model\",\"action\")",
+							"pm.expect(responseJson.meta.model).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.meta.action).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data).to.be.an('object')",
+							"pm.expect(responseJson.data).to.include.all.keys(\"apiVersion\",\"id\",\"name\",\"description\",\"visibility\",\"entities\",\"createdBy\",\"updatedBy\",\"createdAt\",\"updatedAt\")",
+							"pm.expect(responseJson.data.apiVersion).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.id).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.name).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.description).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.visibility).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.entities).to.be.an('object')",
+							"if(_.get(responseJson.data.entities.schemas)) {",
+							"  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.schemas).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.schemas.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.schemas[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.documentations)) {",
+							"  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.documentations).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.documentations.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.documentations[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.integrationtests)) {",
+							"  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.integrationtests).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.integrationtests.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.integrationtests[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.tests)) {",
+							"  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.tests).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.tests.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.tests[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.testsuites)) {",
+							"  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.testsuites).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.testsuites.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.testsuites[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"if(_.get(responseJson.data.entities.contracttests)) {",
+							"  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
+							"  pm.expect(responseJson.data.entities.contracttests).to.be.an('array')",
+							"  for (var i = 0; i < responseJson.data.entities.contracttests.length; i++) { ",
+							"   pm.expect(responseJson.data.entities.contracttests[i]).to.be.an('object') ",
+							"}}",
+							"",
+							"pm.expect(responseJson.data.createdBy).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.updatedBy).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.createdAt).to.be.an('string')",
+							"",
+							"pm.expect(responseJson.data.updatedAt).to.be.an('string')",
+							"",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9108825b-28fd-4e2a-ade8-4d789a8e0871",
+						"exec": [
+							"pm.test('Validate Request body', function () {",
+							" console.log('hi')",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "dbc06aa3-0ca8-4ee9-a6fc-ca322d500dbb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/user/:info/:age?id=31061769",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						":info",
+						":age"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "31061769",
+							"description": "(Required) ID of the user"
+						}
+					],
+					"variable": [
+						{
+							"key": "age",
+							"value": "81505197",
+							"description": "(Required) user&#39;s age"
+						},
+						{
+							"key": "age",
+							"value": "81505197",
+							"description": "(Required) user&#39;s age"
+						},
+						{
+							"key": "info",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0459cb97-15d3-485e-9459-bd55acc5a770",
+					"name": "Sample response: Details about a user by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/:info/:age?id=19256268",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								":info",
+								":age"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "19256268"
+								}
+							],
+							"variable": [
+								{
+									"key": "info"
+								},
+								{
+									"key": "age"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"_postman_previewtype": "html",
+					"header": [
+						{
+							"description": {
+								"content": "A link to the next page of responses",
+								"type": "text/plain"
+							},
+							"key": "x-next",
+							"value": "voluptate consequat in cupidatat"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n \"id\": -52411379,\n \"name\": \"ut cillum ullamco\",\n \"tag\": \"commodo incididunt\"\n}"
+				},
+				{
+					"id": "0f736d12-b493-45be-af9c-02b390b03e10",
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/:info/:age?id=19256268",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								":info",
+								":age"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "19256268"
+								}
+							],
+							"variable": [
+								{
+									"key": "info"
+								},
+								{
+									"key": "age"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "Text",
+					"_postman_previewtype": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n \"code\": 35749388,\n \"message\": \"qui voluptate occaecat\"\n}"
+				}
+			],
+			"variable": [
+				{
+					"id": "b82ca4b1-3d0e-4972-91bd-0e1126ba2352",
+					"key": "age",
+					"value": "81505197",
+					"type": "string",
+					"description": "(Required) user&#39;s age"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
 }

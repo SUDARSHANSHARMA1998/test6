@@ -1,0 +1,23 @@
+id = 90e09339-2619-44d1-9169-c07d6f10c7d4
+
+[relations]
+
+[relations.collections]
+rootDirectory = postman/collections
+files[] = {"id":"812948-bd5aef59-eafa-4c4b-93e4-ac02f620bbd5","path":"path_new_9a77c217-3ac6-4cef-873f-e8cf702f8d7b.json","metaData":{}}
+files[] = {"id":"812948-feca1412-ca1e-4404-9dea-055d9360d57f","path":"Release collection_c362b05a-de00-4503-9cc3-d2027f235ab2.json","metaData":{}}
+files[] = {"id":"812948-05c02c09-2b8c-483f-9cff-8247c2780502","path":"sudarshan_mock-m3-m4_abdebc30-7a6e-4ac5-8375-161c67c668c8.json","metaData":{}}
+files[] = {"id":"812948-52b6924d-8a9c-4ea1-98a1-aa636d6524da","path":"Test12_2a4b9faf-ebc6-437c-8aab-a2af65f1e2bd.json","metaData":{}}
+files[] = {"id":"812948-768d9c0e-5017-4d4f-ab5e-25affa1b0055","path":"Test12_51b275f4-4d33-4873-9b12-7a2e6807a85a.json","metaData":{}}
+files[] = {"id":"812948-cf78b254-9538-4e6c-a871-a79249aae8d9","path":"Test12_92831b55-9acf-468f-9481-1eefc0c61a3f.json","metaData":{}}
+
+[relations.collections.metaData]
+
+[relations.apiDefinition]
+rootDirectory = postman/schemas
+files[] = {"path":"schema.yaml","metaData":{}}
+files[] = {"path":"schema1.yaml","metaData":{}}
+
+[relations.apiDefinition.metaData]
+type = openapi:3
+rootFiles[] = schema.yaml

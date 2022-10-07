@@ -1,118 +1,121 @@
 {
-    "info": {
-        "_postman_id": "d593cc80-08bb-4cc3-a03d-ae0f75239c41",
-        "name": "sudarshan_mock-m3-m4",
-        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-    },
-    "item": [
-        {
-            "name": "Sample endpoint: Returns details cganhjg about a particular user",
-            "id": "d4220755-c597-40aa-9cb2-8148141dcbbf",
-            "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                    "raw": "{{baseUrl}}/user?id=<integer>",
-                    "host": [
-                        "{{baseUrl}}"
-                    ],
-                    "path": [
-                        "user"
-                    ],
-                    "query": [
-                        {
-                            "description": "(Required) ID of the user",
-                            "key": "id",
-                            "value": "<integer>"
-                        }
-                    ]
-                }
-            },
-            "response": [
-                {
-                    "id": "a2c8a549-bdcb-4691-9f19-30db8c77628f",
-                    "name": "Sample response: Details about a user by ID",
-                    "originalRequest": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/user?id=<integer>",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "user"
-                            ],
-                            "query": [
-                                {
-                                    "key": "id",
-                                    "value": "<integer>"
-                                }
-                            ]
-                        }
-                    },
-                    "status": "OK",
-                    "code": 200,
-                    "_postman_previewlanguage": "json",
-                    "header": [
-                        {
-                            "description": "A link to the next page of responses",
-                            "key": "x-next",
-                            "value": "commo"
-                        },
-                        {
-                            "key": "Content-Type",
-                            "value": "application/json"
-                        }
-                    ],
-                    "cookie": [],
-                    "responseTime": null,
-                    "body": "{\n \"id\": -14928031,\n \"name\": \"magna\",\n \"tag\": \"et sed occaecat\"\n}"
-                },
-                {
-                    "id": "e5d7ed57-cff9-4b87-a3d3-0ed26208f67d",
-                    "name": "Unexpected error",
-                    "originalRequest": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/user?id=<integer>",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "user"
-                            ],
-                            "query": [
-                                {
-                                    "key": "id",
-                                    "value": "<integer>"
-                                }
-                            ]
-                        }
-                    },
-                    "status": "Internal Server Error",
-                    "code": 500,
-                    "_postman_previewlanguage": "json",
-                    "header": [
-                        {
-                            "key": "Content-Type",
-                            "value": "application/json"
-                        }
-                    ],
-                    "cookie": [],
-                    "responseTime": null,
-                    "body": "{\n \"code\": -20484897,\n \"message\": \"dolor amet\"\n}"
-                }
-            ]
-        }
-    ],
-    "variable": [
-        {
-            "id": "6ca18200-9f34-467d-bb78-5340ad57ba0f",
-            "key": "baseUrl",
-            "value": "http://localhost:3000",
-            "type": "string"
-        }
-    ]
+	"info": {
+		"_postman_id": "05c02c09-2b8c-483f-9cff-8247c2780502",
+		"name": "sudarshan_mock-m3-m4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "812948-05c02c09-2b8c-483f-9cff-8247c2780502"
+	},
+	"item": [
+		{
+			"name": "Sample endpoint: Returns details cganhjg about a particular user",
+			"id": "c4366428-7cff-43c1-8a87-9a9e47176a29",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/user?id=<integer>",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"description": "(Required) ID of the user",
+							"key": "id",
+							"value": "<integer>"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "05f66f8d-7095-448b-8888-aaf8290fb2a9",
+					"name": "Sample response: Details about a user by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user?id=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
+					"header": [
+						{
+							"description": "A link to the next page of responses",
+							"key": "x-next",
+							"value": "commo"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n \"id\": -14928031,\n \"name\": \"magna\",\n \"tag\": \"et sed occaecat\"\n}"
+				},
+				{
+					"id": "706839d0-6773-41b2-a76f-3785026c47dc",
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user?id=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n \"code\": -20484897,\n \"message\": \"dolor amet\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "6ca18200-9f34-467d-bb78-5340ad57ba0f",
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
 }
