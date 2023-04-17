@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "feca1412-ca1e-4404-9dea-055d9360d57f",
+		"_postman_id": "4c9371d1-10f5-4e9a-83cf-1a42d997f608",
 		"name": "Release collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "812948-feca1412-ca1e-4404-9dea-055d9360d57f"
+		"_uid": "525986-4c9371d1-10f5-4e9a-83cf-1a42d997f608"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a5a0447c-67a5-41f0-939c-961314c9f629",
+						"id": "f76b9dba-86fc-4f57-a1ae-1d0e7dff36b5",
 						"exec": [
 							"pm.test('Validate Response body', function () {",
 							"pm.response.to.have.status(200);",
@@ -99,7 +99,7 @@
 					}
 				}
 			],
-			"id": "117d0567-a0e8-4cd3-92ee-e1f653071e31",
+			"id": "d134ea49-88e0-42aa-ad14-8c9cf5125b9e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},

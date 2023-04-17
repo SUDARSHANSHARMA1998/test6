@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "05c02c09-2b8c-483f-9cff-8247c2780502",
+		"_postman_id": "5cd8a5ba-9f8e-428c-9ceb-185526283248",
 		"name": "sudarshan_mock-m3-m4",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "812948-05c02c09-2b8c-483f-9cff-8247c2780502"
+		"_uid": "525986-5cd8a5ba-9f8e-428c-9ceb-185526283248"
 	},
 	"item": [
 		{
 			"name": "Sample endpoint: Returns details cganhjg about a particular user",
-			"id": "c4366428-7cff-43c1-8a87-9a9e47176a29",
+			"id": "907ea6a1-3fbb-4051-8c13-caa2888ebef1",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -31,7 +31,7 @@
 			},
 			"response": [
 				{
-					"id": "05f66f8d-7095-448b-8888-aaf8290fb2a9",
+					"id": "ad8a21ed-d4f1-49e0-bfff-c6c8edff090b",
 					"name": "Sample response: Details about a user by ID",
 					"originalRequest": {
 						"method": "GET",
@@ -72,7 +72,7 @@
 					"body": "{\n \"id\": -14928031,\n \"name\": \"magna\",\n \"tag\": \"et sed occaecat\"\n}"
 				},
 				{
-					"id": "706839d0-6773-41b2-a76f-3785026c47dc",
+					"id": "99bc324a-ba10-4a70-a31c-e0cb248c69b1",
 					"name": "Unexpected error",
 					"originalRequest": {
 						"method": "GET",

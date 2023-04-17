@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "768d9c0e-5017-4d4f-ab5e-25affa1b0055",
+		"_postman_id": "6728007a-368d-4d05-9674-831f0ac0b199",
 		"name": "Test12",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "812948-768d9c0e-5017-4d4f-ab5e-25affa1b0055"
+		"_uid": "525986-6728007a-368d-4d05-9674-831f0ac0b199"
 	},
 	"item": [
 		{
 			"name": "Sample endpoint: Returns details about a particular user",
-			"id": "94638887-fc53-4698-bea2-057869548174",
+			"id": "69bb1167-b4a1-4f0e-905b-9387105ebd13",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -31,7 +31,7 @@
 			},
 			"response": [
 				{
-					"id": "799e39c4-fa01-45bc-a76a-01162aa15c98",
+					"id": "ad71f6fb-dd22-45ea-a5d5-da663c371d69",
 					"name": "Sample response: Details about a user by ID",
 					"originalRequest": {
 						"method": "GET",
@@ -79,7 +79,7 @@
 					"body": "{\n \"id\": 49495731,\n \"name\": \"id non proident\",\n \"tag\": \"in\"\n}"
 				},
 				{
-					"id": "aa819b61-d563-4643-b04e-ee443e0a14f5",
+					"id": "70f0975a-c4d2-4657-a6e6-5c447ef610bb",
 					"name": "Unexpected error",
 					"originalRequest": {
 						"method": "GET",
